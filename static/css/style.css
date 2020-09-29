@@ -1,0 +1,26 @@
+
+.header {
+  color: #2f2323;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+img {
+  border-radius: 50%;
+  height: 260px;
+  width: 260px;
+  padding: 5px;
+}
+
+
+.table-users {
+  border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+}
+

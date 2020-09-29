@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Reviews scrapper</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1 style="text-align: center">Search reviews on Flipkart.com</h1>
+
+    <div class="form">
+        <form action="/search" method="POST">
+            <div class="form-group">
+                <label for="inputAddress">Product name</label>
+                <input type="text" name="content" id="content" class="form-control" id="inputAddress"
+                       placeholder="Apple iPhone 11 Pro">
+            </div>
+            <!--            <input type="text" name="content" id="content">-->
+            <!--            <input type="submit" value="Search">-->
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+{% if reviews %}
+
+<hr/>
+
+<div >
+    <div class="header">Reviews of <b>{{reviews['Product']}}</b></div>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Product</th>
+            <th>Overall Rating</th>
+            <th>Number of Ratings</th>
+            <th>Number of Reviews</th>
+            <th>Overall 1</th>
+            <th>Overall 2</th>
+            <th>Overall 3</th>
+            <th>Overall 3</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{reviews['Product']}}</td>
+            <td>{{reviews['rate']}}{{reviews['star']}}</td>
+            <td>{{reviews['num_ratings']}}</td>
+            <td>{{reviews['num_reviews']}}</td>
+            <td>{{reviews['ov1']}} {{reviews['ov11']}}</td>
+            <td>{{reviews['ov2']}} {{reviews['ov21']}}</td>
+            <td>{{reviews['ov3']}} {{reviews['ov31']}}</td>
+            <td>{{reviews['ov4']}} {{reviews['ov41']}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+           {% for i in imgs %}
+             <img src="{{i}}"/>
+       {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
