@@ -20,7 +20,7 @@ This review scraper is using flipkart.com | e-commerce site for scrape product r
 
  - pip install -r requirements.txt
 
- <h3>Quick note on <b>Python-Flask</b> <h3>
+ <h3>Quick note on <b>Python-Flask</b> </h3>
 
  - Flask is a light-weight web framework for Python
  - Easy to work with (Same syntax as of Python)
